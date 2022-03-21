@@ -1,0 +1,13 @@
+const { finished } = require('stream');
+finished(new ReadableStream(), (err) => { /* ... */ });
+finished(new WritableStream(), (err) => { /* ... */ });
+finished(new TransformStream(), (err) => { /* ... */ });
+import { finished } from 'stream/promises';
+await finished(new ReadableStream());
+await finished(new WritableStream());
+await finished(new TransformStream());
+stream.pipeline()
+const { pipeline } = require('stream');
+pipeline(new ReadableStream(), new TransformStream(), new WritableStream(), (err) => { /* ... */ });
+import { pipeline } from 'stream/promises';
+await pipeline(new ReadableStream(), new TransformStream(), new WritableStream());
